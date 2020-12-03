@@ -13,7 +13,7 @@ public class WorkWithBytes {
                 bufferedWriter.write(potentialChar);
             }
         } catch (IOException e) {
-            throw new RuntimeException("We have a problam with file");
+            throw new RuntimeException("We have a problam with file " + fileName, e);
         }
     }
 }
