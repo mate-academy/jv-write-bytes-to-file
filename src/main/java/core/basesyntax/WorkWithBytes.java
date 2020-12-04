@@ -14,7 +14,7 @@ public class WorkWithBytes {
                 bufferedWriter.flush();
             }
         } catch (IOException e) {
-            System.out.println("ERROR: Calm down and drink coffee for debug.");
+            throw new RuntimeException("ERROR: Calm down and drink coffee for debug.", e);
         }
     }
 }
