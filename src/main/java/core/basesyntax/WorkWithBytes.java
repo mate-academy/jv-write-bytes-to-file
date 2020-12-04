@@ -14,7 +14,7 @@ public class WorkWithBytes {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             Files.write(file.toPath(), data);
         } catch (IOException e) {
-            throw new RuntimeException("Can't create a file.", e);
+            throw new RuntimeException("Can't create a file!", e);
         }
     }
 }
