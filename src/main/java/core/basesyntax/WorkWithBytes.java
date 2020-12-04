@@ -14,7 +14,7 @@ public class WorkWithBytes {
             throw new RuntimeException("File "
                     + fileToWrite.getName() + " couldn't be created", e);
         }
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite))) {
             for (byte dataLine : data) {
                 bw.write(dataLine);
                 bw.flush();
