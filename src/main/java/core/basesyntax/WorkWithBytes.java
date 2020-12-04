@@ -8,14 +8,13 @@ import java.io.IOException;
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
         File file = new File(fileName);
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             for (byte byteFromData : data) {
-                bufferedWriter.write((char) byteFromData);
+                bufferedWriter.write(byteFromData);
                 bufferedWriter.flush();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("ERROR: Calm down and drink coffee for debug.");
         }
     }
 }
