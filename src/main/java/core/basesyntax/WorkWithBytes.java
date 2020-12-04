@@ -10,12 +10,12 @@ public class WorkWithBytes {
         File file = new File(fileName);
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-            for(byte info: data) {
+            for (byte info: data) {
                 bufferedWriter.write(info);
             }
             bufferedWriter.close();
         } catch (IOException e) {
-            System.out.println("Can't write to this file");
+            System.out.println("Can't write to the file");
         }
     }
 }
