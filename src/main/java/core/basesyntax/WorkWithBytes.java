@@ -8,12 +8,10 @@ import java.io.IOException;
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
         File file = new File(fileName);
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             for (byte info: data) {
                 bufferedWriter.write(info);
             }
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println("Can't write to the file");
         }
