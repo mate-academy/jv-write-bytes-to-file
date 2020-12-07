@@ -8,7 +8,8 @@ public class WorkWithBytes {
         try (FileOutputStream out = new FileOutputStream(fileName)) {
             out.write(data);
         } catch (IOException e) {
-            throw new RuntimeException("Problem to write file", e);
+            throw new RuntimeException(String.format("Problem to write to a file %s",
+                    fileName), e);
         }
     }
 }
