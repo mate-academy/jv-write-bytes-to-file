@@ -7,12 +7,11 @@ import java.nio.file.Path;
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
 
-        for (byte tempByte : data) {
-            try {
-                Files.write(Path.of(fileName), data);
-            } catch (IOException e) {
-                throw new RuntimeException("Can't write data to file " + fileName, e);
-            }
+        try {
+            Files.write(Path.of(fileName), data);
+        } catch (IOException e) {
+            throw new RuntimeException("Can't write data to file " + fileName, e);
         }
+
     }
 }
