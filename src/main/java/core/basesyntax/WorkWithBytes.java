@@ -9,7 +9,7 @@ public class WorkWithBytes {
         try (OutputStream outputStream = new FileOutputStream(fileName)) {
             outputStream.write(data);
         } catch (IOException e) {
-            throw new RuntimeException("Can't write to file!");
+            throw new RuntimeException("Can't write bytes to file!", e);
         }
     }
 }
