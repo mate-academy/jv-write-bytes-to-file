@@ -10,7 +10,7 @@ public class WorkWithBytes {
         try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
             fileOutputStream.write(data);
         } catch (IOException e) {
-            throw new RuntimeException("The file was not written");
+            throw new RuntimeException("The file was not written", e);
         }
     }
 }
