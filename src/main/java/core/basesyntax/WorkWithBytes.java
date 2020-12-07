@@ -7,9 +7,7 @@ public class WorkWithBytes {
 
     public void writeBytesToFile(String fileName, byte[] data) {
         try (FileOutputStream writer = new FileOutputStream(fileName)) {
-            for (byte piece: data) {
-                writer.write(piece);
-            }
+                writer.write(data);
         } catch (IOException e) {
             throw new RuntimeException("Can't write to file" + fileName, e);
         }
