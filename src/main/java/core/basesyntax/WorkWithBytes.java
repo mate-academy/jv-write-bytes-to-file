@@ -11,7 +11,7 @@ public class WorkWithBytes {
                 writer.write(piece);
             }
         } catch (IOException e) {
-            throw new RuntimeException("Can't write to file", e);
+            throw new RuntimeException("Can't write to file" + fileName, e);
         }
     }
 }
