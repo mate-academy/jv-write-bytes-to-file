@@ -1,17 +1,13 @@
 package core.basesyntax;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
         File fileToWrite = new File(fileName);
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileToWrite))) {
+        try (FileOutputStream fos = new FileOutputStream(fileToWrite)) {
             for (byte dataLine : data) {
-                bw.write(dataLine);
-                bw.flush();
+                fos.write(dataLine);
             }
         } catch (IOException e) {
             throw new RuntimeException("File "
