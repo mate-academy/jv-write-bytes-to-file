@@ -7,8 +7,7 @@ import java.io.IOException;
 
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
-        File fileOfBytes = new File(fileName);
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileOfBytes))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName))) {
             for (byte potentialChar : data) {
                 bufferedWriter.write(potentialChar);
             }
