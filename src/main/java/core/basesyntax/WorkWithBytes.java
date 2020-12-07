@@ -11,12 +11,12 @@ public class WorkWithBytes {
         try {
             file.createNewFile();
         } catch (IOException e) {
-            throw new RuntimeException("Can't create file", e);
+            throw new RuntimeException("Can't create file" + fileName, e);
         }
         try {
             Files.write(file.toPath(), data, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            throw new RuntimeException("Can't write data to file", e);
+            throw new RuntimeException("Can't write data to file" + fileName, e);
         }
     }
 }
