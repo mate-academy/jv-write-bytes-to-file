@@ -1,23 +1,22 @@
 package core.basesyntax;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
         File file = createEmptyFile(fileName);
-        for (byte iterator : data) {
-            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true))) {
-                bufferedWriter.write(iterator);
-            } catch (IOException e) {
-                throw new RuntimeException("Can't write data to file " + fileName, e);
+        try (FileOutputStream fileOutputStream = new FileOutputStream(new File(fileName), true)) {
+            for (byte iterator : data) {
+                fileOutputStream.write(iterator);
             }
+        } catch (IOException e) {
+            throw new RuntimeException("Can't write data to file " + fileName, e);
         }
     }
 
-    public File createEmptyFile(String fileName) {
+    private File createEmptyFile(String fileName) {
         File file = new File(fileName);
         if (file.exists()) {
             file.delete();
