@@ -10,7 +10,7 @@ public class WorkWithBytes {
             FileOutputStream fileOutputStream = new FileOutputStream(fileName);
             fileOutputStream.write(data);
         } catch (IOException e) {
-            throw new RuntimeException("Can't create file");
+            throw new RuntimeException("Can't create file", e);
         }
     }
 }
