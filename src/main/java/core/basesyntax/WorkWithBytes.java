@@ -10,10 +10,8 @@ public class WorkWithBytes {
         File file = new File(fileName);
         try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
             fileOutputStream.write(data);
-        } catch (FileNotFoundException e) {
-            System.out.println("Can't write to the file");
         } catch (IOException e) {
-            System.out.println("Can't write to the file");
+            throw new RuntimeException("Can't write to the file");
         }
     }
 }
