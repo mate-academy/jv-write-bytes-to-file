@@ -13,7 +13,7 @@ public class WorkWithBytes {
                          = new BufferedWriter(new FileWriter(fileName, true))) {
                 bufferedWriter.write(bytes);
             } catch (IOException e) {
-                throw new RuntimeException("Can't write data to file", e);
+                throw new RuntimeException("Can't write data to file - " + fileName, e);
             }
         }
     }
