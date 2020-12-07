@@ -3,14 +3,14 @@ package core.basesyntax;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class WorkWithBytes {
     public void writeBytesToFile(String fileName, byte[] data) {
-        File file = createFile(fileName);
         try {
-            Files.write(file.toPath(), data);
+            Files.write(Path.of(fileName), data);
         } catch (IOException e) {
-            throw new RuntimeException("Can't write data to file " + file, e);
+            throw new RuntimeException("Can't write data to file " + Path.of(fileName), e);
         }
     }
 
