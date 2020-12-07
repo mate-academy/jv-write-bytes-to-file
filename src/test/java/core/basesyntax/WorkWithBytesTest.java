@@ -10,7 +10,7 @@ public class WorkWithBytesTest {
     private WorkWithBytes workWithFile = new WorkWithBytes();
 
     @Test
-    public void writeLineToFile() {
+    public void writeLineToFile() throws IOException {
         byte[] data = {72, 101, 108, 108, 111, 32, 102, 114, 111, 109, 32, 109, 97, 116, 101, 33};
         workWithFile.writeBytesToFile("first.txt", data);
         String actualResult = readFromFile("first.txt").trim();
@@ -19,7 +19,7 @@ public class WorkWithBytesTest {
     }
 
     @Test
-    public void writeTwoLinesToFile() {
+    public void writeTwoLinesToFile() throws IOException {
         byte[] data = {45, 32, 87, 104, 97, 116, 32, 105, 115, 32, 121, 111, 117, 114, 32, 110,
                 97, 109, 101, 63, 10, 45, 32, 77, 121, 32, 110, 97, 109, 101, 32, 105, 115, 32,
                 74, 111, 104, 110, 115, 58, 41};
@@ -30,7 +30,7 @@ public class WorkWithBytesTest {
     }
 
     @Test
-    public void writeLinesWithTabulationToFile() {
+    public void writeLinesWithTabulationToFile() throws IOException {
         byte[] data = {65, 49, 10, 9, 65, 50, 10, 9, 9, 65, 51, 10, 9, 9, 9, 65, 52};
         workWithFile.writeBytesToFile("third.txt", data);
         String actualResult = readFromFile("third.txt").trim();

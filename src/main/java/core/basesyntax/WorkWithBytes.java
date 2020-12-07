@@ -6,13 +6,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class WorkWithBytes {
-
-    public void writeBytesToFile(String fileName, byte[] data) {
+    public void writeBytesToFile(String fileName, byte[] data) throws IOException {
         try {
             Path path = Paths.get(fileName);
             Files.write(path, data);
         } catch (IOException e) {
-            throw new RuntimeException("Can't write data : to " + fileName);
+            throw new IOException("Can't write data to " + fileName + ", " + e);
         }
     }
 }
